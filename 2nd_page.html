@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PETPRO Animal Clinic - Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-bg: #8B7B7B;
+            --main-bg: #E5E5E5;
+            --header-bg: #666666;
+            --accent-pink: #D4A5A5;
+        }
+        
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background-color: var(--main-bg);
+        }
+
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            color: white;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .date-card {
+            background-color: var(--accent-pink);
+            padding: 20px;
+            border-radius: 10px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .stat-icon {
+            background-color: var(--accent-pink);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .carousel-indicators {
+            bottom: -50px;
+        }
+        
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .notification-section {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <img src="https://t4.ftcdn.net/jpg/08/19/66/31/360_F_819663119_che4sZSrmQv8uQJOzuN9TVQFQNHJlfQ2.jpg" alt="Profile" onclick="window.location.href='3rd_page.html'" class="profile-image">
+            <h5 class="mt-2 mb-1">Admin</h5>
+            <small>admin001@gmail.com</small>
+        </div>
+        
+        <nav>
+            <a href="#" class="nav-link active">
+                <i class="fas fa-gauge-high"></i>
+                Dashboard
+            </a>
+            <a href="./4th_page.html" class="nav-link">
+                <i class="fas fa-clipboard"></i>
+                Records
+            </a>
+            <a href="./12th_page.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Schedule
+            </a>
+            <a href="./14th_page.html" class="nav-link">
+                <i class="fas fa-box"></i>
+                Inventory
+            </a>
+            <a href="./15th_page.html" class="nav-link">
+                <i class="fas fa-users"></i>
+                Employees
+            </a>
+            <a href="./16th_page.html" class="nav-link">
+                <i class="fas fa-chart-bar"></i>
+                Reports
+            </a>
+            <a href="./1st_page.html" class="nav-link mt-auto">
+                <i class="fas fa-sign-out-alt"></i>
+                LOG OUT
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1 class="h3">PETPRO ANIMAL CLINIC</h1>
+            <img src="/api/placeholder/40/40" alt="Logo" class="logo">
+        </div>
+
+        <div class="row">
+            <div class="col-md-8">
+                <div id="bannerCarousel" class="carousel slide mb-5" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="/api/placeholder/800/200" class="banner-image" alt="Clinic Scene">
+                        </div>
+                    </div>
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="3"></button>
+                    </div>
+                </div>
+
+                <h2 class="h4 mb-4">Dashboard</h2>
+
+                <div class="date-card">
+                    <h3 class="h2 mb-0">MONDAY</h3>
+                    <h4 class="h1">NOV 25, 2024</h4>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-calendar-check"></i>
+                    </div>
+                    <div>
+                        <h3 class="h1 mb-0">4</h3>
+                        <p class="mb-0">Appointment</p>
+                        <button type="button" onclick="window.location.href='12th_page.html'"></button>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-paw"></i>
+                    </div>
+                    <div>
+                        <h3 class="h1 mb-0">17</h3>
+                        <p class="mb-0">Patients</p>
+                        <button type="button" onclick="window.location.href='4th_page.html'"></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="notification-section">
+                    <h4>Notification</h4>
+                    <p>4 Appointment Requests</p>
+                    
+                    <h4 class="mt-4">Message</h4>
+                    <p>3 New Messages</p>
+                    
+                    <h4 class="mt-4">Announcement</h4>
+                    <p>None</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

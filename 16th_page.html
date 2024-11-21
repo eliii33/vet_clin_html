@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports Dashboard</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-bg: #8B7B7B;
+            --main-bg: #E5E5E5;
+            --header-bg: #666666;
+        }
+        
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background-color: var(--main-bg);
+        }
+        
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+        
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            color: white;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        
+        :root {
+            --message-bg: #C17B6B;
+            --inventory-bg: #B4A69B;
+            --employee-bg: #D4B8B8;
+            --schedule-bg: #B37563;
+        }
+        
+        .report-card {
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            color: white;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        
+        .report-card:hover {
+            transform: translateX(5px);
+        }
+        
+        .notification-badge {
+            position: absolute;
+            right: 15px;
+            background-color: #dc3545;
+            color: white;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 0.9rem;
+        }
+        
+        .announcement-box {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            height: 300px;
+        }
+        
+        .messages { background-color: var(--message-bg); }
+        .inventory { background-color: var(--inventory-bg); }
+        .employee { background-color: var(--employee-bg); }
+        .schedule { background-color: var(--schedule-bg); }
+        
+        .icon {
+            margin-right: 15px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <img src="/api/placeholder/100/100" alt="Profile" class="profile-image">
+            <h5 class="mt-2 mb-1">Admin</h5>
+            <small>admin001@gmail.com</small>
+        </div>
+        
+        <nav>
+            <a href="2nd_page.html" class="nav-link">
+                <i class="fas fa-gauge-high"></i>
+                Dashboard
+            </a>
+            <a href="./4th_page.html" class="nav-link">
+                <i class="fas fa-clipboard"></i>
+                Records
+            </a>
+            <a href="./12th_page.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Schedule
+            </a>
+            <a href="./4th_page.html" class="nav-link">
+                <i class="fas fa-box"></i>
+                Inventory
+            </a>
+            <a href="./15th_page.html" class="nav-link">
+                <i class="fas fa-users"></i>
+                Employees
+            </a>
+            <a href="./16th_page.html" class="nav-link active">
+                <i class="fas fa-chart-bar"></i>
+                Reports
+            </a>
+            <a href="./1st_page.html" class="nav-link mt-auto">
+                <i class="fas fa-sign-out-alt"></i>
+                LOG OUT
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="row p-4">
+            <div class="col-md-8">
+                <div class="d-flex align-items-center mb-4">
+                    <i class="fas fa-file-alt me-2"></i>
+                    <h4 class="mb-0">Reports</h4>
+                </div>
+                
+                <!-- Report Cards -->
+                <div class="report-card messages">
+                    <i class="fas fa-envelope icon"></i>
+                    Messages from clients
+                    <span class="notification-badge">7</span>
+                </div>
+                
+                <div class="report-card inventory">
+                    <i class="fas fa-box icon"></i>
+                    Inventory Reports
+                    <span class="notification-badge">3</span>
+                </div>
+                
+                <div class="report-card employee">
+                    <i class="fas fa-users icon"></i>
+                    Employee Reports
+                    <span class="notification-badge">1</span>
+                </div>
+                
+                <div class="report-card schedule">
+                    <i class="fas fa-calendar icon"></i>
+                    Scheduling Reports
+                    <span class="notification-badge">5</span>
+                </div>
+            </div>
+            
+            <div class="col-md-4">
+                <h5 class="mb-3">Announcements:</h5>
+                <div class="announcement-box">
+                    Clinic Clean-up(Saturday)
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

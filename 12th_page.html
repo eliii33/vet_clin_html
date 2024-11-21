@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Schedule Dashboard</title>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+
+        :root {
+
+            --sidebar-bg: #8B7B7B;
+
+            --main-bg: #E5E5E5;
+
+            --accent-pink: #D4A5A5;
+
+            --pending-color: #8a8480;
+
+            --completed-color: #776a5f;
+
+            --ongoing-color: #d28181;
+
+            --cancelled-color: #deb4aa;
+
+        }
+
+        
+
+        body {
+
+            min-height: 100vh;
+
+            margin: 0;
+
+            background-color: var(--main-bg);
+
+        }
+
+        
+
+        .sidebar {
+
+            background-color: var(--sidebar-bg);
+
+            width: 250px;
+
+            position: fixed;
+
+            height: 100vh;
+
+            padding: 20px;
+
+            color: white;
+
+        }
+
+        
+
+        .profile-section {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+
+        }
+
+        
+
+        .profile-image {
+
+            width: 100px;
+
+            height: 100px;
+
+            border-radius: 50%;
+
+            margin-bottom: 10px;
+
+        }
+
+        
+
+        .nav-link {
+
+            color: white;
+
+            padding: 12px 15px;
+
+            margin: 5px 0;
+
+            border-radius: 5px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+        }
+
+        
+
+        .nav-link:hover {
+
+            background-color: rgba(255, 255, 255, 0.1);
+
+            color: white;
+
+        }
+
+        
+
+        .nav-link.active {
+
+            background-color: rgba(255, 255, 255, 0.2);
+
+        }
+
+        
+
+        .main-content {
+
+            margin-left: 250px;
+
+            padding: 20px;
+
+        }
+
+
+
+        /* Schedule specific styles */
+
+        .schedule-cell {
+
+            border: 1px solid #dee2e6;
+
+            padding: 10px;
+
+            min-height: 80px;
+
+            margin: 2px;
+
+        }
+
+        
+
+        .pending { background-color: var(--pending-color); }
+
+        .completed { background-color: var(--completed-color); }
+
+        .ongoing { background-color: var(--ongoing-color); }
+
+        .cancelled { background-color: var(--cancelled-color); }
+
+        
+
+        .reminder-card {
+
+            background-color: #f8d7da;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+        }
+
+        
+
+        .time-column {
+
+            width: 100px;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <div class="profile-section">
+
+            <img src="/api/placeholder/100/100" alt="Profile" class="profile-image">
+
+            <h5 class="mt-2 mb-1">Admin</h5>
+
+            <small>admin001@gmail.com</small>
+
+        </div>
+
+        
+
+        <nav>
+
+            <a href="2nd_page.html" class="nav-link">
+
+                <i class="fas fa-gauge-high"></i>
+
+                Dashboard
+
+            </a>
+
+            <a href="4th_page.html" class="nav-link">
+
+                <i class="fas fa-clipboard"></i>
+
+                Records
+
+            </a>
+
+            <a href="12th_page.html" class="nav-link active">
+
+                <i class="fas fa-calendar"></i>
+
+                Schedule
+
+            </a>
+
+            <a href="14th_page.html" class="nav-link">
+
+                <i class="fas fa-box"></i>
+
+                Inventory
+
+            </a>
+
+            <a href="15th_page.html" class="nav-link">
+
+                <i class="fas fa-users"></i>
+
+                Employees
+
+            </a>
+
+            <a href="16th_page.html" class="nav-link">
+
+                <i class="fas fa-chart-bar"></i>
+
+                Reports
+
+            </a>
+
+            <a href="1st_page.html" class="nav-link mt-auto">
+
+                <i class="fas fa-sign-out-alt"></i>
+
+                LOG OUT
+
+            </a>
+
+        </nav>
+
+    </div>
+
+
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="row p-4">
+
+            <div class="col-md-9">
+
+                <div class="date-card">
+
+                    <h4 class="h1">SCHEDULE</h4>
+
+                    <h3 class="h2 mb-0">MONDAY</h3>
+
+                    <h4 class="h1">NOV 25, 2024</h4>
+
+                </div>
+
+
+
+                <div class="schedule-container">
+
+                    <div class="schedule-grid">
+
+                        <div class="row border-bottom fw-bold">
+
+                            <div class="col time-slot"></div>
+
+                            <div class="col text-center">Sun</div>
+
+                            <div class="col text-center">Mon</div>
+
+                            <div class="col text-center">Tue</div>
+
+                            <div class="col text-center">Wed</div>
+
+                            <div class="col text-center">Thu</div>
+
+                            <div class="col text-center">Fri</div>
+
+                            <div class="col text-center">Sat</div>
+
+                        </div>
+
+
+
+                        <div class="row">
+
+                            <div class="col time-column">
+
+                                <div class="schedule-cell">9:00-10:00</div>
+
+                                <div class="schedule-cell">10:00-11:00</div>
+
+                                <div class="schedule-cell">11:00-12:00</div>
+
+                                <div class="schedule-cell">1:00-2:00</div>
+
+                                <div class="schedule-cell">2:00-3:00</div>
+
+                                <div class="schedule-cell">3:00-4:00</div>
+
+                                <div class="schedule-cell">4:00-5:00</div>
+
+                            </div>
+                            <!-- Sunday -->
+
+                            <div class="col">
+
+                                <div class="schedule-cell "></div>
+
+                                <div class="schedule-cell completed">Ms. Xu</div>
+
+                                <div class="schedule-cell"></div>
+
+                                <div class="schedule-cell completed">Mr.Boo</div>
+
+                                <div class="schedule-cell"></div>
+
+                                <div class="schedule-cell completed">Mr.Thom</div>
+
+                                <div class="schedule-cell"></div>
+
+                            </div>
+
+
+
+                            <!-- Monday -->
+
+                            <div class="col">
+
+                                <div class="schedule-cell ongoing">Mr. Hong</div>
+
+                                <div class="schedule-cell"></div>
+
+                                <div class="schedule-cell pending">Mr.Son</div>
+
+                                <div class="schedule-cell "></div>
+
+                                <div class="schedule-cell cancelled">Ms.Shita</div>
+
+                                <div class="schedule-cell "></div>
+
+                                <div class="schedule-cell"></div>
+
+                            </div>
+
+
+
+                            <!-- Tuesday -->
+
+                            <div class="col">
+
+                                <div class="schedule-cell cancelled">MS.Nic</div>
+
+                                <div class="schedule-cell pending">Mr.Josh</div>
+
+                                <div class="schedule-cell pending">Mr.Kim</div>
+
+                                <div class="schedule-cell"></div>
+
+                                <div class="schedule-cell pending">Mr.Luna</div>
+
+                                <div class="schedule-cell"></div>
+
+                                <div class="schedule-cell pending">Mr.Max</div>
+
+                            </div></body>
+
+                            </html>
+                            <!-- Wednesday -->
+                            <div class="col">
+                                <div class="schedule-cell pending">Ms.Juli</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Ms.Repo</div>
+                                <div class="schedule-cell pending">Mr.Eluf</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Ms.Mae</div>
+                            </div>
+
+
+                            <!-- Thursday -->
+                            <div class="col">
+                                <div class="schedule-cell pending">Mr.Josh</div>
+                                <div class="schedule-cell pending">Ms.Marie</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Mr.Scoup</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell"></div>
+                            </div>
+
+
+                            <!-- Friday -->
+                            <div class="col">
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Mr.Ruson</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Ms.Viel</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Mr.Megan</div>
+                                <div class="schedule-cell pending">Mr.Floor</div>
+                            </div>
+
+
+                            <!-- Saturday -->
+                            <div class="col">
+                                <div class="schedule-cell pending">Mr.Bushi</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell pending">Ms.Rea</div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell"></div>
+                                <div class="schedule-cell"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-3">
+                    <div class="reminder-card">
+                        <h5>REMINDERS:</h5>
+                        <ul class="list-unstyled">
+                            <li>• 1 appointment left</li>
+                        </ul>
+                    </div>
+                   
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-2" style="width: 20px; height: 20px; background-color: var(--pending-color);"></div>
+                            <span>Pending</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-2" style="width: 20px; height: 20px; background-color: var(--completed-color);"></div>
+                            <span>Completed</span>
+                        </div>
+                        <div class="d-flex align-items-center mb-2">
+                            <div class="me-2" style="width: 20px; height: 20px; background-color: var(--ongoing-color);"></div>
+                            <span>On-going</span>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="me-2" style="width: 20px; height: 20px; background-color: var(--cancelled-color);"></div>
+                            <span>Cancelled</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

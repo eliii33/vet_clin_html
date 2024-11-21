@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-bg: #8B7B7B;
+            --main-bg: #E5E5E5;
+            --header-bg: #666666;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background-color: var(--main-bg);
+        }
+
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: white;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <img src="https://t4.ftcdn.net/jpg/08/19/66/31/360_F_819663119_che4sZSrmQv8uQJOzuN9TVQFQNHJlfQ2.jpg" alt="Profile" class="profile-image">
+            <h5 class="mt-2 mb-1">Admin</h5>
+            <small>admin001@gmail.com</small>
+        </div>
+        
+        <nav>
+            <a href="2nd_page.html" class="nav-link">
+                <i class="fas fa-gauge-high"></i>
+                Dashboard
+            </a>
+            <a href="4th_page.html" class="nav-link active">
+                <i class="fas fa-clipboard"></i>
+                Records
+            </a>
+            <a href="12th_page.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Schedule
+            </a>
+            <a href="14th_page.html" class="nav-link">
+                <i class="fas fa-box"></i>
+                Inventory
+            </a>
+            <a href="15th_page.html" class="nav-link">
+                <i class="fas fa-users"></i>
+                Employees
+            </a>
+            <a href="16th_page.html" class="nav-link">
+                <i class="fas fa-chart-bar"></i>
+                Reports
+            </a>
+            <a href="1st_page.html" class="nav-link mt-auto">
+                <i class="fas fa-sign-out-alt"></i>
+                LOG OUT
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <i class="fas fa-paw me-2" style="color: #8B4513;"></i>
+                <h2 class="mb-0">Client Records</h2>
+            </div>
+            <button class="btn btn-primary">
+                <i class="fas fa-folder me-2"></i>
+                Client list
+            </button>
+        </div>
+
+        <!-- Owner Information -->
+        <h3 class="section-header">OWNER</h3>
+        <div class="info-section">
+            <div class="row mb-2">
+                <div class="col-12">
+                    <span class="label">Name:</span>
+                    <span>Joshua M. Hong</span>
+                </div>
+            </div>
+            <div class="row mb-2">
+                <div class="col-12">
+                    <span class="label">Address:</span>
+                    <span>1713 Molave St., Pahinga Norte, Candelaria, Quezon</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <span class="label">Contact no.:</span>
+                    <span>09171317131</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pets Information -->
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="section-header mb-0 flex-grow-1">PETS</h3>
+            <button class="btn btn-primary">
+                <i class="fas fa-plus"></i>
+                Add pet
+            </button>
+        </div>
+        <div class="info-section">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-2">
+                        <span class="label">Name:</span>
+                        <span>DK</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="label">Species:</span>
+                        <span>Dog</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="label">Breed:</span>
+                        <span>Golden Retriever</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="label">Gender:</span>
+                        <span>Male</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-2">
+                        <span class="label">Color:</span>
+                        <span>Brown</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="label">Weight:</span>
+                        <span>28kg</span>
+                    </div>
+                    <div class="mb-2">
+                        <span class="label">Birth Date:</span>
+                        <span>02/18/22</span>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-end mt-3">
+                <button class="btn btn-link">
+                    <i class="fas fa-edit"></i>
+                    Edit
+                </button>
+                <button class="btn btn-link text-danger">
+                    <i class="fas fa-trash"></i>
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

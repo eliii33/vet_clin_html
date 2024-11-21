@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --sidebar-bg: #8B7B7B;
+            --main-bg: #E5E5E5;
+            --header-bg: #666666;
+            --header-color: #cb997e;
+            --table-header-bg: #cb997e;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background-color: var(--main-bg);
+        }
+
+        .sidebar {
+            background-color: var(--sidebar-bg);
+            width: 250px;
+            position: fixed;
+            height: 100vh;
+            padding: 20px;
+            color: white;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .nav-link {
+            color: white;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+        }
+        
+        .nav-link.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+
+        .inventory-title {
+            color: var(--header-color);
+            margin-bottom: 30px;
+        }
+
+        .search-container {
+            position: relative;
+            max-width: 300px;
+            margin-left: auto;
+        }
+
+        .search-input {
+            background-color: #888;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 35px 8px 15px;
+            color: white;
+            width: 100%;
+        }
+
+        .search-input::placeholder {
+            color: #ddd;
+        }
+
+        .search-icon {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+        }
+
+        .inventory-table {
+            border: 1px solid #ddd;
+        }
+
+        .inventory-table th {
+            background-color: var(--table-header-bg);
+            color: white;
+            border: 1px solid #fff;
+        }
+
+        .inventory-table td {
+            vertical-align: middle;
+            border: 1px solid #ddd;
+        }
+
+        .pagination-container {
+            text-align: right;
+            margin-top: 20px;
+        }
+
+        .pagination-btn {
+            background-color: var(--table-header-bg);
+            border: none;
+            color: white;
+            padding: 5px 15px;
+            margin: 0 5px;
+        }
+
+        .pagination-btn:hover {
+            background-color: #b5866f;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="profile-section">
+            <img src="/api/placeholder/100/100" alt="Profile" class="profile-image">
+            <h5 class="mt-2 mb-1">Admin</h5>
+            <small>admin001@gmail.com</small>
+        </div>
+        
+        <nav>
+            <a href="2nd_page.html" class="nav-link">
+                <i class="fas fa-gauge-high"></i>
+                Dashboard
+            </a>
+            <a href="./4th_page.html" class="nav-link">
+                <i class="fas fa-clipboard"></i>
+                Records
+            </a>
+            <a href="./12th_page.html" class="nav-link">
+                <i class="fas fa-calendar"></i>
+                Schedule
+            </a>
+            <a href="./14th_page.html" class="nav-link active">
+                <i class="fas fa-box"></i>
+                Inventory
+            </a>
+            <a href="./15th_page.html" class="nav-link">
+                <i class="fas fa-users"></i>
+                Employees
+            </a>
+            <a href="./16th_page.html" class="nav-link">
+                <i class="fas fa-chart-bar"></i>
+                Reports
+            </a>
+            <a href="./1st_page.html" class="nav-link mt-auto">
+                <i class="fas fa-sign-out-alt"></i>
+                LOG OUT
+            </a>
+        </nav>
+    </div>
+
+    <div class="main-content">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h1 class="inventory-title">Inventory</h1>
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <span class="search-icon"></span>
+            </div>
+        </div>
+
+        <!-- Inventory Table -->
+        <div class="table-responsive">
+            <table class="table inventory-table">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+                        <th>Quantity in Stock</th>
+                        <th>Supplier Name</th>
+                        <th>Expiration Date</th>
+                        <th>Last order date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Pain Relief Injection</td>
+                        <td>Medications</td>
+                        <td>50</td>
+                        <td>VetMed Supplies</td>
+                        <td>12/2025</td>
+                        <td>09/29/24</td>
+                    </tr>
+                    <tr>
+                        <td>Bandage Rolls</td>
+                        <td>Consumables</td>
+                        <td>100</td>
+                        <td>Fransis Co.</td>
+                        <td>N/A</td>
+                        <td>10/20/24</td>
+                    </tr>
+                    <tr>
+                        <td>Sterile Surgical</td>
+                        <td>Equipment</td>
+                        <td>30</td>
+                        <td>Kian Supply</td>
+                        <td>N/A</td>
+                        <td>10/20/24</td>
+                    </tr>
+                    <tr>
+                        <td>Flea and Tick Treatment</td>
+                        <td>Medications</td>
+                        <td>200</td>
+                        <td>Vetmed Supplies</td>
+                        <td>02/2025</td>
+                        <td>09/25/24</td>
+                    </tr>
+                    <tr>
+                        <td>Thermometer</td>
+                        <td>Equipment</td>
+                        <td>10</td>
+                        <td>Raf Supply</td>
+                        <td>N/A</td>
+                        <td>09/23/24</td>
+                    </tr>
+                    <tr>
+                        <td>Syringe</td>
+                        <td>Consumables</td>
+                        <td>500</td>
+                        <td>Fransis Co.</td>
+                        <td>N/A</td>
+                        <td>10/20/24</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

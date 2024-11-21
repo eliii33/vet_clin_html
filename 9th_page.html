@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Records</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+          .sidebar {
+            background-color: #B4A7A2;
+            min-height: 100vh;
+            padding: 20px 0;
+        }
+        .profile-section {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+        
+        .profile-image {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        
+        .nav-link {
+            color: #2c2c2c;
+            padding: 12px 15px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        
+        .nav-link:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+        
+        .nav-link.active {
+            background-color: rgba(0,0,0,0.15);
+        }
+        
+        .search-box {
+            background-color: #808080;
+            border-radius: 25px;
+            padding: 8px 15px;
+            margin: 20px 0;
+        }
+        
+        .search-box input {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 100%;
+        }
+        
+        .search-box input::placeholder {
+            color: #fff;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+        }
+        
+        .table th {
+            background-color: #808080;
+            color: white;
+        }
+        
+        .btn-add-record {
+            background-color: #B8ADA6;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        
+        .pagination-btn {
+            background-color: #808080;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <div class="col-md-3 col-lg-2 sidebar">
+                <div class="profile-section">
+                    <img src="/api/placeholder/100/100" alt="Profile" class="profile-image">
+                    <h5 class="mb-1">Admin</h5>
+                    <p class="text-muted mb-0">admin001@gmail.com</p>
+                </div>
+                
+                <nav class="mt-4">
+                    <div class="nav flex-column">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-line me-2"></i> Dashboard
+                        </a>
+                        <a href="#" class="nav-link active">
+                            <i class="fas fa-folder me-2"></i> Records
+                        </a>
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-calendar me-2"></i> Schedule
+                        </a>
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-box me-2"></i> Inventory
+                        </a>
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-users me-2"></i> Employees
+                        </a>
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-chart-bar me-2"></i> Reports
+                        </a>
+                    </div>
+                </nav>
+                
+                <div class="mt-auto" style="position: absolute; bottom: 20px; width: calc(100% - 40px);">
+                    <a href="#" class="nav-link text-center">
+                        LOG OUT
+                    </a>
+                </div>
+            </div>
+
+            <!-- Main Content -->
+            <div class="col-md-9 col-lg-10 p-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>
+                        <i class="fas fa-paw me-2"></i>
+                        Client Records
+                    </h2>
+                    <div class="search-box">
+                        <input type="text" placeholder="Search..." class="text-white">
+                    </div>
+                </div>
+
+                <div class="table-responsive mt-4">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Owner name</th>
+                                <th>Pet Name</th>
+                                <th>Species</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Joshua M. Hong</td>
+                                <td>DK</td>
+                                <td>Dog</td>
+                            </tr>
+                            <tr>
+                                <td>Eisa R. Xu</td>
+                                <td>Jun</td>
+                                <td>Cat</td>
+                            </tr>
+                            <tr>
+                                <td>Reylouis A. San Pedro</td>
+                                <td>Cairo</td>
+                                <td>Cat</td>
+                            </tr>
+                            <tr>
+                                <td>David K. Young</td>
+                                <td>Yuki</td>
+                                <td>Cat</td>
+                            </tr>
+                            <tr>
+                                <td>Aira S. Shiratori</td>
+                                <td>Okarun</td>
+                                <td>Dog</td>
+                            </tr>
+                            <tr>
+                                <td>Hoshi Kwon</td>
+                                <td>Latte</td>
+                                <td>Dog</td>
+                            </tr>
+                            <tr>
+                                <td>Minnie Nicha</td>
+                                <td>Yuno</td>
+                                <td>Cat</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                    <div>
+                        <button class="pagination-btn">Previous</button>
+                        <button class="pagination-btn">Next</button>
+                    </div>
+                    <button class="btn-add-record">
+                        <i class="fas fa-plus me-2"></i>
+                        Add Record
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
